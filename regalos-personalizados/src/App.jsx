@@ -730,7 +730,7 @@ function NuestrosTrabajos({ abrirImagen }) {
       ) : (
         <div className="trabajos-vacio">
           <h3>
-            Próximamente, nuestros trabajos en tazas
+            Próximamente, nuestros trabajos en tazas.
           </h3>
 
           <p>
