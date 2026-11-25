@@ -1837,3 +1837,103 @@ footer p {
     padding: 35px 20px;
   }
 }
+
+
+/* ==========================================
+   FOTOGRAFÍAS DE TAZAS EN NUESTROS TRABAJOS
+========================================== */
+
+.trabajo-card .boton-imagen {
+  background-color: #ffffff;
+}
+
+.trabajo-card .boton-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  padding: 12px;
+}
+
+.trabajo-card .boton-imagen:hover img {
+  transform: scale(1.03);
+}
+
+/* VISOR DE IMÁGENES DE TRABAJOS */
+
+.visor-contenido img[src*="trabajo-taza"] {
+  object-fit: contain;
+  max-height: 75vh;
+}
+
+
+/* ==========================================
+   TAZAS CON BORDES DORADOS
+   AJUSTE DE TAMAÑO Y POSICIÓN
+========================================== */
+
+.tarjeta .boton-imagen:has(
+  img[src="/productos/taza con borde dorado.jpg"]
+) {
+  background: #ffffff;
+  aspect-ratio: 3 / 4;
+}
+
+.tarjeta .boton-imagen img[src="/productos/taza con borde dorado.jpg"] {
+  width: 100%;
+  height: 100%;
+  padding: 28px;
+  object-fit: contain;
+  object-position: center;
+  transform: none;
+}
+
+/* EFECTO AL PASAR EL MOUSE */
+
+.tarjeta .boton-imagen:hover img[src="/productos/taza con borde dorado.jpg"] {
+  transform: scale(1.03);
+}
+
+/* AJUSTE PARA CELULARES */
+
+@media (max-width: 600px) {
+  .tarjeta .boton-imagen img[src="/productos/taza con borde dorado.jpg"] {
+    padding: 18px;
+  }
+}
+
+
+/* ==========================================
+   TAZAS CON BORDES DORADOS
+   AJUSTE DE TAMAÑO Y POSICIÓN
+========================================== */
+
+.tarjeta .boton-imagen:has(
+  img[src="/productos/taza con borde dorado.jpg"]
+) {
+  background: #ffffff;
+  aspect-ratio: 3 / 4;
+}
+
+.tarjeta .boton-imagen img[src="/productos/taza con borde dorado.jpg"] {
+  width: 100%;
+  height: 100%;
+  padding: 28px;
+  object-fit: contain;
+  object-position: center;
+  transform: none;
+}
+
+/* EFECTO AL PASAR EL MOUSE */
+
+.tarjeta .boton-imagen:hover img[src="/productos/taza con borde dorado.jpg"] {
+  transform: scale(1.03);
+}
+
+/* AJUSTE PARA CELULARES */
+
+@media (max-width: 600px) {
+  .tarjeta .boton-imagen img[src="/productos/taza con borde dorado.jpg"] {
+    padding: 18px;
+  }
+}

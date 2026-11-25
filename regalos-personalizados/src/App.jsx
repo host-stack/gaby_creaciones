@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
 // ==========================================
-// CONFIGURACIÓN DE WHATSAPP
+// CONFIGURACIÓN GENERAL
 // ==========================================
 
 const NUMERO_WHATSAPP = "595991183571";
@@ -55,6 +55,14 @@ const categorias = [
       "Toallitas personalizadas con nombres, fotografías y diseños especiales.",
     imagen: "/productos/toallitas.jpg",
     boton: "Ver modelos de toallitas"
+  },
+  {
+    id: "alcancias",
+    nombre: "Alcancías personalizadas",
+    descripcion:
+      "Alcancías con detalles de colores, ideales para personalizar y regalar.",
+    imagen: "/productos/alcancias.jpg",
+    boton: "Ver colores disponibles"
   }
 ];
 
@@ -63,46 +71,38 @@ const categorias = [
 // ==========================================
 
 const secciones = {
-  // TAZAS
-
   tazas: {
     titulo: "Nuestros tipos de tazas",
-    descripcion:
-      "Descubrí nuestras opciones de tazas personalizadas.",
+    descripcion: "Descubrí nuestras opciones de tazas personalizadas.",
     productos: [
       {
         id: "t1",
         nombre: "Tazas sublimadas",
-        descripcion:
-          "Con fotografías, nombres y diseños personalizados.",
+        descripcion: "Con fotografías, nombres y diseños personalizados.",
         imagen: "/productos/tazas sublimadas.jpg"
       },
       {
         id: "t2",
         nombre: "Tazas mágicas",
-        descripcion:
-          "Revelan su diseño con bebidas calientes.",
+        descripcion: "Revelan su diseño con bebidas calientes.",
         imagen: "/productos/taza mágica.jpg"
       },
       {
         id: "t3",
         nombre: "Tazas con manija de corazón",
-        descripcion:
-          "Un detalle especial para regalar.",
+        descripcion: "Un detalle especial para regalar.",
         imagen: "/productos/taza manija de corazón.jpg"
       },
       {
         id: "t4",
         nombre: "Tazas con glitter",
-        descripcion:
-          "Diseños con un acabado brillante.",
+        descripcion: "Diseños con un acabado brillante.",
         imagen: "/productos/taza con glitter.jpg"
       },
       {
         id: "t5",
         nombre: "Tazas con bordes dorados",
-        descripcion:
-          "Tazas elegantes con detalles dorados.",
+        descripcion: "Tazas elegantes con detalles dorados.",
         imagen: "/productos/taza con borde dorado.jpg"
       },
       {
@@ -115,8 +115,6 @@ const secciones = {
       }
     ]
   },
-
-  // COLORES DE TAZAS ARENADAS
 
   arenadas: {
     titulo: "Colores de Tazas Arenadas",
@@ -168,13 +166,9 @@ const secciones = {
     ]
   },
 
-  // REMERAS
-  // EL COLLAGE YA NO ESTÁ AQUÍ
-
   remeras: {
     titulo: "Remeras personalizadas",
-    descripcion:
-      "Conocé nuestros modelos de remeras personalizadas.",
+    descripcion: "Conocé nuestros modelos de remeras personalizadas.",
     productos: [
       {
         id: "r1",
@@ -190,8 +184,6 @@ const secciones = {
       }
     ]
   },
-
-  // LLAVEROS
 
   llaveros: {
     titulo: "Llaveros personalizados",
@@ -229,8 +221,6 @@ const secciones = {
       }
     ]
   },
-
-  // REGALOS
 
   regalos: {
     titulo: "Regalos especiales",
@@ -281,12 +271,14 @@ const secciones = {
     ]
   },
 
-  // CARPETAS
+  // ========================================
+  // CARPETAS DECORADAS
+  // NOMBRE PROTEGIDO CONTRA TRADUCCIÓN
+  // ========================================
 
   carpetas: {
     titulo: "Carpetas decoradas",
-    descripcion:
-      "Conocé nuestros modelos escolares y personalizados.",
+    descripcion: "Conocé nuestros modelos escolares y personalizados.",
     productos: [
       {
         id: "c0",
@@ -320,8 +312,6 @@ const secciones = {
       }
     ]
   },
-
-  // TOALLITAS
 
   toallitas: {
     titulo: "Toallitas personalizadas",
@@ -363,12 +353,58 @@ const secciones = {
         imagen: "/productos/toallita5.png"
       }
     ]
+  },
+
+  // ========================================
+  // ALCANCÍAS PERSONALIZADAS
+  // ========================================
+
+  alcancias: {
+    titulo: "Colores de Alcancías Personalizadas",
+    descripcion:
+      "Conocé nuestros cinco colores de alcancías. Son ideales para personalizar con nombres, fotografías y diseños especiales.",
+    productos: [
+      {
+        id: "alc1",
+        nombre: "Alcancía personalizada - Amarillo",
+        descripcion:
+          "Alcancía con tapa y bordes amarillos, ideal para personalizar.",
+        imagen: "/productos/alcancia5.jpg"
+      },
+      {
+        id: "alc2",
+        nombre: "Alcancía personalizada - Verde",
+        descripcion:
+          "Alcancía con tapa y bordes verdes, perfecta para recuerdos y regalos.",
+        imagen: "/productos/alcancia4.jpg"
+      },
+      {
+        id: "alc3",
+        nombre: "Alcancía personalizada - Morado",
+        descripcion:
+          "Alcancía con tapa y bordes morados, disponible para personalizar.",
+        imagen: "/productos/alcancia3.jpg"
+      },
+      {
+        id: "alc4",
+        nombre: "Alcancía personalizada - Rosa",
+        descripcion:
+          "Alcancía con tapa y bordes rosas, ideal para diseños personalizados.",
+        imagen: "/productos/alcancia2.jpg"
+      },
+      {
+        id: "alc5",
+        nombre: "Alcancía personalizada - Azul",
+        descripcion:
+          "Alcancía con tapa y bordes azules, ideal para regalar.",
+        imagen: "/productos/alcancia1.jpg"
+      }
+    ]
   }
 };
 
 // ==========================================
-// NUESTRA GALERÍA DE TRABAJOS
-// INDEPENDIENTE DEL CATÁLOGO
+// NUESTROS TRABAJOS REALIZADOS
 // ==========================================
 
 const trabajosRealizados = {
@@ -377,20 +413,58 @@ const trabajosRealizados = {
       id: "trabajo-r1",
       nombre: "Remeras para ferias pedagógicas",
       descripcion:
-        "Una muestra de nuestros diseños personalizados para actividades y proyectos escolares.",
+        "Algunos diseños realizados para proyectos y actividades escolares.",
       imagen: "/productos/collage remeras.jpg",
       esTrabajo: true
     }
   ],
 
-  // AQUÍ AGREGAREMOS LAS FOTOS DE TAZAS
-  // CUANDO ESTÉN PREPARADAS
-
-  tazas: []
+  tazas: [
+    {
+      id: "trabajo-t0",
+      nombre: "Nuestros trabajos en tazas",
+      descripcion:
+        "Conocé algunos ejemplos de tazas personalizadas con diseños especiales para distintas ocasiones.",
+      imagen: "/productos/trabajo-taza-portada.png",
+      esTrabajo: true
+    },
+    {
+      id: "trabajo-t1",
+      nombre: "Tazas empresariales",
+      descripcion:
+        "Trabajos realizados para empresas, negocios y celebraciones laborales.",
+      imagen: "/productos/trabajo-taza.png",
+      esTrabajo: true
+    },
+    {
+      id: "trabajo-t2",
+      nombre: "Tazas para proyectos escolares",
+      descripcion:
+        "Recuerdos personalizados con diseños educativos, cuentos y actividades escolares.",
+      imagen: "/productos/trabajo-taza2.png",
+      esTrabajo: true
+    },
+    {
+      id: "trabajo-t3",
+      nombre: "Tazas para eventos",
+      descripcion:
+        "Diseños personalizados para exposiciones, grupos, promociones y acontecimientos especiales.",
+      imagen: "/productos/trabajo-taza3.png",
+      esTrabajo: true
+    },
+    {
+      id: "trabajo-t4",
+      nombre: "Tazas personalizadas para docentes",
+      descripcion:
+        "Detalles personalizados con nombres y diseños institucionales para profesores y profesoras.",
+      imagen: "/productos/trabajo-taza4.png",
+      esTrabajo: true
+    }
+  ]
 };
 
 // ==========================================
-// BUSCADOR DE PRODUCTOS
+// BUSCADOR
 // ==========================================
 
 const listaParaBuscar = Object.entries(secciones).flatMap(
@@ -430,15 +504,12 @@ function IconoWhatsApp() {
       fill="currentColor"
       aria-hidden="true"
     >
-      <path d="M16.004 2.67A13.3 13.3 0 0 0 4.52 22.68L2.67 29.33l6.82-1.79a13.3 13.3 0 1 0 6.51-24.87Zm0 24.18a10.83 10.83 0 0 1-5.5-1.5l-.4-.24-4.05 1.06 1.08-3.94-.26-.41a10.85 10.85 0 1 1 9.13 5.03Zm5.95-8.12c-.33-.17-1.93-.95-2.23-1.06-.3-.11-.52-.17-.74.17-.22.33-.85 1.06-1.04 1.28-.19.22-.38.25-.7.08-.33-.16-1.37-.5-2.61-1.61-.96-.86-1.61-1.92-1.8-2.25-.19-.33-.02-.5.14-.67.15-.15.33-.39.49-.58.17-.19.22-.33.33-.55.11-.22.06-.41-.03-.58-.08-.17-.74-1.79-1.02-2.45-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.58.08-.88.41-.3.33-1.15 1.13-1.15 2.75s1.18 3.19 1.34 3.41c.17.22 2.32 3.54 5.62 4.97.79.34 1.4.54 1.88.69.79.25 1.5.22 2.07.13.63-.09 1.93-.79 2.2-1.55.27-.77.27-1.42.19-1.55-.08-.14-.3-.22-.63-.39Z" />
+      <path d="M16.004 2.67A13.3 13.3 0 0 0 4.52 22.68L2.67 29.33l6.82-1.79a13.3 13.3 0 1 0 6.51-24.87Zm0 24.18a10.83 10.83 0 0 1-5.5-1.5l-.4-.24-4.05 1.06 1.08-3.94-.26-.41a10.85 10.85 0 0 1 9.13 5.03Zm5.95-8.12c-.33-.17-1.93-.95-2.23-1.06-.3-.11-.52-.17-.74.17-.22.33-.85 1.06-1.04 1.28-.19.22-.38.25-.7.08-.33-.16-1.37-.5-2.61-1.61-.96-.86-1.61-1.92-1.8-2.25-.19-.33-.02-.5.14-.67.15-.15.33-.39.49-.58.17-.19.22-.33.33-.55.11-.22.06-.41-.03-.58-.08-.17-.74-1.79-1.02-2.45-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.58.08-.88.41-.3.33-1.15 1.13-1.15 2.75s1.18 3.19 1.34 3.41c.17.22 2.32 3.54 5.62 4.97.79.34 1.4.54 1.88.69.79.25 1.5.22 2.07.13.63-.09 1.93-.79 2.2-1.55.27-.77.27-1.42.19-1.55-.08-.14-.3-.22-.63-.39Z" />
     </svg>
   );
 }
 
-function BotonWhatsApp({
-  nombreProducto = "",
-  children
-}) {
+function BotonWhatsApp({ nombreProducto = "", children }) {
   return (
     <a
       className="boton-consulta"
@@ -461,28 +532,49 @@ function WhatsAppFlotante() {
       aria-label="Consultar por WhatsApp"
     >
       <IconoWhatsApp />
-
-      <span className="whatsapp-flotante-texto">
-        Consultanos
-      </span>
+      <span className="whatsapp-flotante-texto">Consultanos</span>
     </a>
   );
+}
+
+// ==========================================
+// FUNCIÓN PARA PROTEGER LOS TEXTOS
+// DE CARPETAS CONTRA LA TRADUCCIÓN
+// ==========================================
+
+function propiedadesSinTraduccion(esCarpeta) {
+  return esCarpeta
+    ? { translate: "no", className: "notranslate" }
+    : {};
 }
 
 // ==========================================
 // IMÁGENES AMPLIABLES
 // ==========================================
 
-function ImagenProducto({
-  producto,
-  abrirImagen
-}) {
-  const [imagenFallida, setImagenFallida] =
-    useState(false);
+function ImagenProducto({ producto, abrirImagen }) {
+  const [imagenFallida, setImagenFallida] = useState(false);
 
   useEffect(() => {
     setImagenFallida(false);
   }, [producto.imagen]);
+
+  const esPortadaAlcancias =
+    producto.imagen === "/productos/alcancias.jpg";
+
+  const estiloPortadaAlcancias = esPortadaAlcancias
+    ? {
+        width: "100%",
+        height: "100%",
+        maxWidth: "100%",
+        objectFit: "contain",
+        objectPosition: "center",
+        padding: "26px",
+        boxSizing: "border-box",
+        backgroundColor: "#ffffff",
+        transform: "none"
+      }
+    : undefined;
 
   return (
     <button
@@ -491,6 +583,11 @@ function ImagenProducto({
       disabled={imagenFallida}
       onClick={() => abrirImagen(producto)}
       aria-label={`Ampliar fotografía de ${producto.nombre}`}
+      style={
+        esPortadaAlcancias
+          ? { backgroundColor: "#ffffff" }
+          : undefined
+      }
     >
       {imagenFallida ? (
         <span
@@ -514,9 +611,9 @@ function ImagenProducto({
             src={producto.imagen}
             alt={producto.nombre}
             loading="lazy"
+            style={estiloPortadaAlcancias}
             onError={() => setImagenFallida(true)}
           />
-
           <span className="indicador-imagen">
             Ver fotografía
           </span>
@@ -527,7 +624,8 @@ function ImagenProducto({
 }
 
 // ==========================================
-// TARJETAS DEL CATÁLOGO
+// TARJETAS DE PRODUCTOS
+// CORRECCIÓN DE TRADUCCIÓN INTEGRADA
 // ==========================================
 
 function TarjetaProducto({
@@ -535,8 +633,9 @@ function TarjetaProducto({
   abrirImagen,
   cambiarSeccion
 }) {
-  const tieneColores =
-    producto.subcategoria === "arenadas";
+  const tieneColores = Boolean(producto.subcategoria);
+
+  const esCarpeta = producto.id?.startsWith("c");
 
   return (
     <article className="tarjeta">
@@ -546,21 +645,22 @@ function TarjetaProducto({
       />
 
       <div className="tarjeta-contenido">
-        <h3>{producto.nombre}</h3>
+        <h3 {...propiedadesSinTraduccion(esCarpeta)}>
+          {producto.nombre}
+        </h3>
+
         <p>{producto.descripcion}</p>
 
         {tieneColores ? (
           <button
             type="button"
             className="boton-ver-tazas"
-            onClick={() => cambiarSeccion("arenadas")}
+            onClick={() => cambiarSeccion(producto.subcategoria)}
           >
             Ver colores disponibles
           </button>
         ) : (
-          <BotonWhatsApp
-            nombreProducto={producto.nombre}
-          />
+          <BotonWhatsApp nombreProducto={producto.nombre} />
         )}
       </div>
     </article>
@@ -571,10 +671,7 @@ function TarjetaProducto({
 // BUSCADOR
 // ==========================================
 
-function BuscadorProductos({
-  busqueda,
-  setBusqueda
-}) {
+function BuscadorProductos({ busqueda, setBusqueda }) {
   return (
     <div className="contenedor-buscador">
       <label
@@ -602,11 +699,9 @@ function BuscadorProductos({
           id="buscar-productos"
           type="search"
           autoComplete="off"
-          placeholder="Buscar tazas, remeras, toallitas..."
+          placeholder="Buscar tazas, remeras, alcancías..."
           value={busqueda}
-          onChange={(evento) =>
-            setBusqueda(evento.target.value)
-          }
+          onChange={(evento) => setBusqueda(evento.target.value)}
         />
 
         {busqueda && (
@@ -622,23 +717,20 @@ function BuscadorProductos({
 
       <p className="buscador-ayuda">
         También podés buscar por nombre, color o temática,
-        como «toallitas», «Pascua» o «lila».
+        como «alcancías», «toallitas» o «tazas arenadas».
       </p>
     </div>
   );
 }
 
 // ==========================================
-// NUEVA GALERÍA: NUESTROS TRABAJOS
-// SIN BOTONES DE WHATSAPP
+// GALERÍA DE TRABAJOS REALIZADOS
 // ==========================================
 
 function NuestrosTrabajos({ abrirImagen }) {
-  const [categoriaActiva, setCategoriaActiva] =
-    useState("remeras");
+  const [categoriaActiva, setCategoriaActiva] = useState("tazas");
 
-  const trabajos =
-    trabajosRealizados[categoriaActiva] || [];
+  const trabajos = trabajosRealizados[categoriaActiva] || [];
 
   return (
     <section
@@ -660,8 +752,6 @@ function NuestrosTrabajos({ abrirImagen }) {
         </p>
       </div>
 
-      {/* FILTROS DE GALERÍA */}
-
       <div
         className="trabajos-filtros"
         aria-label="Categorías de trabajos"
@@ -669,16 +759,10 @@ function NuestrosTrabajos({ abrirImagen }) {
         <button
           type="button"
           className={`trabajos-filtro ${
-            categoriaActiva === "remeras"
-              ? "activo"
-              : ""
+            categoriaActiva === "remeras" ? "activo" : ""
           }`}
-          aria-pressed={
-            categoriaActiva === "remeras"
-          }
-          onClick={() =>
-            setCategoriaActiva("remeras")
-          }
+          aria-pressed={categoriaActiva === "remeras"}
+          onClick={() => setCategoriaActiva("remeras")}
         >
           Remeras
         </button>
@@ -686,59 +770,37 @@ function NuestrosTrabajos({ abrirImagen }) {
         <button
           type="button"
           className={`trabajos-filtro ${
-            categoriaActiva === "tazas"
-              ? "activo"
-              : ""
+            categoriaActiva === "tazas" ? "activo" : ""
           }`}
-          aria-pressed={
-            categoriaActiva === "tazas"
-          }
-          onClick={() =>
-            setCategoriaActiva("tazas")
-          }
+          aria-pressed={categoriaActiva === "tazas"}
+          onClick={() => setCategoriaActiva("tazas")}
         >
           Tazas
         </button>
       </div>
 
-      {/* FOTOGRAFÍAS */}
+      <div className="trabajos-grid">
+        {trabajos.map((trabajo) => (
+          <article
+            className="trabajo-card"
+            key={trabajo.id}
+          >
+            <ImagenProducto
+              producto={trabajo}
+              abrirImagen={abrirImagen}
+            />
 
-      {trabajos.length > 0 ? (
-        <div className="trabajos-grid">
-          {trabajos.map((trabajo) => (
-            <article
-              className="trabajo-card"
-              key={trabajo.id}
-            >
-              <ImagenProducto
-                producto={trabajo}
-                abrirImagen={abrirImagen}
-              />
+            <div className="trabajo-contenido">
+              <h3>{trabajo.nombre}</h3>
+              <p>{trabajo.descripcion}</p>
 
-              <div className="trabajo-contenido">
-                <h3>{trabajo.nombre}</h3>
-
-                <p>{trabajo.descripcion}</p>
-
-                <span className="trabajo-etiqueta">
-                  Trabajo realizado
-                </span>
-              </div>
-            </article>
-          ))}
-        </div>
-      ) : (
-        <div className="trabajos-vacio">
-          <h3>
-            Próximamente, nuestros trabajos en tazas
-          </h3>
-
-          <p>
-            Estamos preparando fotografías de nuestras
-            tazas personalizadas para compartirlas aquí.
-          </p>
-        </div>
-      )}
+              <span className="trabajo-etiqueta">
+                Trabajo realizado
+              </span>
+            </div>
+          </article>
+        ))}
+      </div>
 
       <p className="trabajos-nota">
         Imágenes de trabajos realizados.
@@ -758,7 +820,7 @@ function ComoTrabajamos() {
       numero: "01",
       titulo: "Explorá el catálogo",
       descripcion:
-        "Descubrí nuestras tazas, remeras, llaveros, carpetas decoradas, toallitas y regalos especiales."
+        "Descubrí nuestras tazas, remeras, alcancías, llaveros, carpetas decoradas, toallitas y regalos especiales."
     },
     {
       numero: "02",
@@ -829,17 +891,10 @@ function ComoTrabajamos() {
 // ==========================================
 
 export default function App() {
-  const [seccion, setSeccion] =
-    useState("catalogo");
-
-  const [busqueda, setBusqueda] =
-    useState("");
-
-  const [imagenAmpliada, setImagenAmpliada] =
-    useState(null);
-
-  const [menuAbierto, setMenuAbierto] =
-    useState(false);
+  const [seccion, setSeccion] = useState("catalogo");
+  const [busqueda, setBusqueda] = useState("");
+  const [imagenAmpliada, setImagenAmpliada] = useState(null);
+  const [menuAbierto, setMenuAbierto] = useState(false);
 
   const menuRef = useRef(null);
   const botonMenuRef = useRef(null);
@@ -935,31 +990,20 @@ export default function App() {
     window.addEventListener("resize", cambioAncho);
 
     return () => {
-      document.removeEventListener(
-        "pointerdown",
-        clickFuera
-      );
-      document.removeEventListener(
-        "keydown",
-        teclas
-      );
-      window.removeEventListener(
-        "resize",
-        cambioAncho
-      );
+      document.removeEventListener("pointerdown", clickFuera);
+      document.removeEventListener("keydown", teclas);
+      window.removeEventListener("resize", cambioAncho);
     };
   }, [menuAbierto]);
 
   // ========================================
-  // VISOR DE IMÁGENES
+  // VISOR DE FOTOGRAFÍAS
   // ========================================
 
   useEffect(() => {
     if (!imagenAmpliada) return;
 
-    const overflowAnterior =
-      document.body.style.overflow;
-
+    const overflowAnterior = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
     botonCerrarRef.current?.focus();
@@ -1033,9 +1077,7 @@ export default function App() {
 
         return texto
           .split(/\s+/)
-          .every((palabra) =>
-            contenido.includes(palabra)
-          );
+          .every((palabra) => contenido.includes(palabra));
       })
     : [];
 
@@ -1066,10 +1108,7 @@ export default function App() {
           </span>
         </a>
 
-        <div
-          className="contenedor-menu"
-          ref={menuRef}
-        >
+        <div className="contenedor-menu" ref={menuRef}>
           <button
             ref={botonMenuRef}
             type="button"
@@ -1079,13 +1118,9 @@ export default function App() {
             aria-expanded={menuAbierto}
             aria-controls="navegacion-principal"
             aria-label={
-              menuAbierto
-                ? "Cerrar menú"
-                : "Abrir menú"
+              menuAbierto ? "Cerrar menú" : "Abrir menú"
             }
-            onClick={() =>
-              setMenuAbierto(!menuAbierto)
-            }
+            onClick={() => setMenuAbierto(!menuAbierto)}
           >
             <span />
             <span />
@@ -1119,40 +1154,30 @@ export default function App() {
               Productos
             </a>
 
-            {/* NUEVO ENLACE DEL MENÚ */}
-
             <a
               href="#nuestros-trabajos"
-              onClick={() =>
-                setMenuAbierto(false)
-              }
+              onClick={() => setMenuAbierto(false)}
             >
               Nuestros trabajos
             </a>
 
             <a
               href="#como-trabajamos"
-              onClick={() =>
-                setMenuAbierto(false)
-              }
+              onClick={() => setMenuAbierto(false)}
             >
               Cómo trabajamos
             </a>
 
             <a
               href="#nosotros"
-              onClick={() =>
-                setMenuAbierto(false)
-              }
+              onClick={() => setMenuAbierto(false)}
             >
               Nosotros
             </a>
 
             <a
               href="#contacto"
-              onClick={() =>
-                setMenuAbierto(false)
-              }
+              onClick={() => setMenuAbierto(false)}
             >
               Contacto
             </a>
@@ -1162,9 +1187,7 @@ export default function App() {
               href={enlaceWhatsApp()}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() =>
-                setMenuAbierto(false)
-              }
+              onClick={() => setMenuAbierto(false)}
             >
               Consultar por WhatsApp
             </a>
@@ -1175,13 +1198,10 @@ export default function App() {
       <main>
 
         {/* ======================================
-            PORTADA
+            PORTADA PRINCIPAL
         ====================================== */}
 
-        <section
-          id="inicio"
-          className="inicio"
-        >
+        <section id="inicio" className="inicio">
           <div className="inicio-contenido">
             <p className="subtitulo">
               REGALOS Y DETALLES PERSONALIZADOS
@@ -1195,8 +1215,14 @@ export default function App() {
             <p className="texto-inicio">
               En Gaby Creaciones transformamos tus ideas
               en recuerdos especiales. Descubrí nuestras
-              tazas, remeras, llaveros, carpetas decoradas,
-              toallitas y regalos personalizados.
+              tazas, remeras, alcancías, llaveros,
+              <span
+                translate="no"
+                className="notranslate"
+              >
+                {" "}carpetas decoradas
+              </span>
+              , toallitas y regalos personalizados.
             </p>
 
             <div className="botones-inicio">
@@ -1222,9 +1248,15 @@ export default function App() {
             <div className="mini-categorias">
               <span>Tazas</span>
               <span>Remeras</span>
+              <span>Alcancías</span>
               <span>Llaveros</span>
               <span>Regalos</span>
-              <span>Carpetas</span>
+              <span
+                translate="no"
+                className="notranslate"
+              >
+                Carpetas
+              </span>
               <span>Toallitas</span>
             </div>
           </div>
@@ -1240,21 +1272,13 @@ export default function App() {
               NUESTRA ESENCIA
             </p>
 
-            <h2>
-              La esencia de Gaby Creaciones
-            </h2>
+            <h2>La esencia de Gaby Creaciones</h2>
           </div>
 
           <div className="destacados-grid">
             <article className="destacado-card">
-              <span className="numero-destacado">
-                01
-              </span>
-
-              <h3>
-                Diseños con dedicación
-              </h3>
-
+              <span className="numero-destacado">01</span>
+              <h3>Diseños con dedicación</h3>
               <p>
                 Cada creación es preparada con cuidado,
                 prestando atención a los pequeños detalles.
@@ -1262,12 +1286,8 @@ export default function App() {
             </article>
 
             <article className="destacado-card">
-              <span className="numero-destacado">
-                02
-              </span>
-
+              <span className="numero-destacado">02</span>
               <h3>Personalización</h3>
-
               <p>
                 Transformamos tus ideas en productos únicos,
                 pensados especialmente para vos.
@@ -1275,12 +1295,8 @@ export default function App() {
             </article>
 
             <article className="destacado-card">
-              <span className="numero-destacado">
-                03
-              </span>
-
+              <span className="numero-destacado">03</span>
               <h3>Momentos especiales</h3>
-
               <p>
                 Creamos detalles para celebrar, agradecer
                 y sorprender a las personas que más querés.
@@ -1290,13 +1306,10 @@ export default function App() {
         </section>
 
         {/* ======================================
-            CATÁLOGO Y BUSCADOR
+            CATÁLOGO
         ====================================== */}
 
-        <section
-          id="productos"
-          className="productos"
-        >
+        <section id="productos" className="productos">
           <BuscadorProductos
             busqueda={busqueda}
             setBusqueda={setBusqueda}
@@ -1340,7 +1353,7 @@ export default function App() {
               ) : (
                 <div className="sin-resultados">
                   <p>
-                    Probá con «toallitas», «Pascua»,
+                    Probá con «alcancías», «toallitas»,
                     «carpetas» o «tazas arenadas».
                   </p>
 
@@ -1362,43 +1375,63 @@ export default function App() {
                 </p>
 
                 <h2>Nuestro catálogo</h2>
-
                 <p>
                   Encontrá el detalle perfecto para cada ocasión.
                 </p>
               </div>
 
               <div className="catalogo">
-                {categorias.map((categoria) => (
-                  <article
-                    className="tarjeta"
-                    key={categoria.id}
-                  >
-                    <ImagenProducto
-                      producto={{
-                        ...categoria,
-                        categoria: categoria.id,
-                        esCategoria: true
-                      }}
-                      abrirImagen={abrirImagen}
-                    />
+                {categorias.map((categoria) => {
+                  const esCarpeta =
+                    categoria.id === "carpetas";
 
-                    <div className="tarjeta-contenido">
-                      <h3>{categoria.nombre}</h3>
-                      <p>{categoria.descripcion}</p>
+                  return (
+                    <article
+                      className="tarjeta"
+                      key={categoria.id}
+                    >
+                      <ImagenProducto
+                        producto={{
+                          ...categoria,
+                          categoria: categoria.id,
+                          esCategoria: true
+                        }}
+                        abrirImagen={abrirImagen}
+                      />
 
-                      <button
-                        type="button"
-                        className="boton-ver-tazas"
-                        onClick={() =>
-                          cambiarSeccion(categoria.id)
-                        }
-                      >
-                        {categoria.boton}
-                      </button>
-                    </div>
-                  </article>
-                ))}
+                      <div className="tarjeta-contenido">
+                        <h3
+                          {...propiedadesSinTraduccion(esCarpeta)}
+                        >
+                          {categoria.nombre}
+                        </h3>
+
+                        <p>
+                          {categoria.descripcion}
+                        </p>
+
+                        <button
+                          type="button"
+                          className="boton-ver-tazas"
+                          onClick={() =>
+                            cambiarSeccion(categoria.id)
+                          }
+                          translate={
+                            esCarpeta ? "no" : undefined
+                          }
+                        >
+                          <span
+                            className={
+                              esCarpeta ? "notranslate" : undefined
+                            }
+                          >
+                            {categoria.boton}
+                          </span>
+                        </button>
+                      </div>
+                    </article>
+                  );
+                })}
               </div>
             </>
           ) : datosSeccion ? (
@@ -1408,7 +1441,13 @@ export default function App() {
                   NUESTRA COLECCIÓN
                 </p>
 
-                <h2>{datosSeccion.titulo}</h2>
+                <h2
+                  {...propiedadesSinTraduccion(
+                    seccion === "carpetas"
+                  )}
+                >
+                  {datosSeccion.titulo}
+                </h2>
 
                 <p>{datosSeccion.descripcion}</p>
               </div>
@@ -1438,12 +1477,10 @@ export default function App() {
         </section>
 
         {/* ======================================
-            NUESTRA GALERÍA DE TRABAJOS
+            NUESTROS TRABAJOS
         ====================================== */}
 
-        <NuestrosTrabajos
-          abrirImagen={abrirImagen}
-        />
+        <NuestrosTrabajos abrirImagen={abrirImagen} />
 
         {/* ======================================
             CÓMO TRABAJAMOS
@@ -1502,9 +1539,7 @@ export default function App() {
 
       <footer>
         <h2>Gaby Creaciones</h2>
-
         <p>Regalos y detalles personalizados</p>
-
         <div className="linea-footer" />
 
         <p>
@@ -1517,7 +1552,7 @@ export default function App() {
 
       {/* ======================================
           VISOR DE IMÁGENES
-        ====================================== */}
+      ====================================== */}
 
       {imagenAmpliada && (
         <div
@@ -1550,11 +1585,16 @@ export default function App() {
             />
 
             <div className="visor-detalles">
-              <h3>{imagenAmpliada.nombre}</h3>
+              <h3
+                {...propiedadesSinTraduccion(
+                  imagenAmpliada.categoria === "carpetas" ||
+                  imagenAmpliada.id?.startsWith("c")
+                )}
+              >
+                {imagenAmpliada.nombre}
+              </h3>
 
               <p>{imagenAmpliada.descripcion}</p>
-
-              {/* GALERÍA: SIN WHATSAPP */}
 
               {imagenAmpliada.esTrabajo ? (
                 <span className="trabajo-etiqueta">
@@ -1570,16 +1610,18 @@ export default function App() {
                     cambiarSeccion(id);
                   }}
                 >
-                  Ver modelos
+                  {imagenAmpliada.categoria === "alcancias"
+                    ? "Ver colores disponibles"
+                    : "Ver modelos"}
                 </button>
-              ) : imagenAmpliada.subcategoria ===
-                "arenadas" ? (
+              ) : imagenAmpliada.subcategoria ? (
                 <button
                   type="button"
                   className="boton-ver-tazas"
                   onClick={() => {
+                    const destino = imagenAmpliada.subcategoria;
                     cerrarImagen();
-                    cambiarSeccion("arenadas");
+                    cambiarSeccion(destino);
                   }}
                 >
                   Ver colores disponibles
